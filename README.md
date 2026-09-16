@@ -20,7 +20,7 @@ Put project media inside `assets/`, using simple lowercase file names. Recommend
 - 3D: `.glb` (ideally under 15 MB)
 - CV: `.pdf`
 
-The six framed works are in `index.html`. Each visual uses CSS so the first version works without images. Replace the contents of each `<figure class="art …">` with an image when your final media is ready.
+The five framed works are in `index.html`. Each visual uses CSS so the first version works without images. Replace the contents of each `<figure class="art …">` with an image when your final media is ready.
 
 Project-page text and media are stored in `project.js` in the `projects` array.
 

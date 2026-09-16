@@ -26,6 +26,9 @@ button { color:inherit; font:inherit; }
 .frame.is-active::after { opacity:1; }
 .frame:not(.is-active) { filter:brightness(.52) saturate(.65); }
 .art { position:relative; width:100%; height:100%; margin:0; overflow:hidden; }
+.media-art img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.media-shade { position:absolute; inset:0; background:linear-gradient(to top,rgba(9,8,6,.62),transparent 38%); pointer-events:none; }
+.media-art small { z-index:2; color:#f3ecdf; text-shadow:0 2px 12px rgba(0,0,0,.65); }
 .art small { position:absolute; left:16px; bottom:15px; font:.48rem var(--mono); letter-spacing:.16em; }
 .art strong { position:absolute; margin:0; font:300 clamp(2.8rem,5vw,5rem)/.82 var(--serif); }
 .art-yunjin { background:radial-gradient(circle at 65% 25%,#6f4326,#28120d 37%,#080605 80%); color:#edcf8f; }
@@ -38,11 +41,6 @@ button { color:inherit; font:inherit; }
 .body-two { left:31%; transform:rotate(-17deg); border-radius:65% 35% 55% 45%; }
 .art-cad { background-color:#10171a; background-image:linear-gradient(rgba(210,190,145,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(210,190,145,.09) 1px,transparent 1px); background-size:26px 26px; }
 .art-cad svg { position:absolute; width:90%; height:88%; left:5%; top:4%; fill:none; stroke:#d9d1c1; stroke-width:1.1; }
-.art-illusion { background:linear-gradient(145deg,#c8c5bd,#8a948f 42%,#303b3c 75%,#151a1b); color:#f2eee5; }
-.art-illusion strong { left:8%; top:11%; }
-.art-illusion strong i { font-weight:300; }
-.mist { position:absolute; width:125%; height:40%; left:-20%; top:34%; background:rgba(255,255,255,.2); filter:blur(25px); border-radius:50%; transform:rotate(-22deg); }
-.mist-two { top:58%; transform:rotate(20deg); opacity:.6; }
 .art-xuqi { background:#ded8cb; color:#171613; }
 .art-xuqi strong { left:9%; top:9%; letter-spacing:-.06em; }
 .arch { position:absolute; width:68%; height:72%; left:16%; bottom:0; border:1px solid #25231e; border-radius:50% 50% 0 0; background:linear-gradient(90deg,transparent 49.8%,rgba(31,29,25,.3) 50%,transparent 50.2%); }
@@ -83,6 +81,8 @@ button { color:inherit; font:inherit; }
 .media-grid { margin-top:7rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 .media-slot { min-height:50vh; display:grid; place-items:center; border:1px dashed rgba(196,168,109,.4); color:#736c62; font:.54rem var(--mono); letter-spacing:.13em; text-align:center; }
 .media-slot:first-child { grid-column:1/-1; min-height:72vh; }
+.media-slot img,.media-slot video { display:block; width:100%; height:100%; object-fit:cover; }
+.media-slot video { background:#000; }
 .next-project { display:flex; justify-content:space-between; align-items:end; padding:5rem clamp(1.2rem,8vw,10rem); background:var(--red); color:var(--paper); }
 .next-project span { font:.58rem var(--mono); letter-spacing:.13em; }
 .next-project strong { font:300 clamp(2.5rem,5vw,5rem) var(--serif); }
