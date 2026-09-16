@@ -12,14 +12,14 @@ button { color:inherit; font:inherit; }
 .topbar p { text-align:center; color:var(--muted); }
 .topbar a:last-child { justify-self:end; border-bottom:1px solid var(--gold); padding-bottom:.25rem; }
 .name { font-size:.68rem; }
-.gallery { position:relative; height:100svh; min-height:620px; perspective:1400px; perspective-origin:50% 46%; overflow:hidden; }
+.gallery { position:relative; height:100svh; min-height:620px; perspective:1750px; perspective-origin:50% 46%; overflow:hidden; }
 .gallery::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 47%,rgba(190,157,91,.09),transparent 48%),linear-gradient(to bottom,transparent 65%,rgba(0,0,0,.55)); pointer-events:none; }
-.gallery-title { position:absolute; z-index:9; width:100%; top:12%; text-align:center; pointer-events:none; }
+.gallery-title { position:absolute; z-index:9; width:100%; top:10%; text-align:center; pointer-events:none; }
 .gallery-title span,.gallery-title p { font:.56rem var(--mono); letter-spacing:.15em; text-transform:uppercase; color:var(--muted); }
-.gallery-title h1 { margin:.65rem 0 .35rem; font:300 clamp(2.4rem,5vw,5rem)/.9 var(--serif); letter-spacing:-.04em; transition:opacity .2s,transform .2s; }
+.gallery-title h1 { margin:.55rem 0 .3rem; font:300 clamp(2.2rem,4.1vw,4.25rem)/.9 var(--serif); letter-spacing:-.04em; transition:opacity .2s,transform .2s; }
 .gallery-title.changing h1,.gallery-title.changing p { opacity:0; transform:translateY(7px); }
-.cylinder-scene { position:absolute; left:50%; top:54%; width:100%; height:min(58vh,570px); transform:translate(-50%,-50%); transform-style:preserve-3d; touch-action:none; user-select:none; }
-.cylinder { --radius:520px; position:absolute; left:50%; top:50%; width:clamp(210px,22vw,330px); height:clamp(300px,43vh,470px); transform-style:preserve-3d; transform:translate(-50%,-50%) rotateY(var(--rotation,0deg)); will-change:transform; }
+.cylinder-scene { position:absolute; left:50%; top:54%; width:100%; height:min(54vh,525px); transform:translate(-50%,-50%); transform-style:preserve-3d; touch-action:none; user-select:none; }
+.cylinder { --radius:520px; position:absolute; left:50%; top:50%; width:clamp(205px,20vw,305px); height:clamp(290px,39vh,425px); transform-style:preserve-3d; transform:translate(-50%,-50%) rotateY(var(--rotation,0deg)); will-change:transform; }
 .frame { position:absolute; inset:0; display:block; padding:10px; background:#15120e; border:1px solid rgba(233,226,214,.32); box-shadow:0 22px 55px rgba(0,0,0,.55); backface-visibility:hidden; transform:rotateY(var(--angle)) translateZ(var(--radius)); transition:filter .35s,opacity .35s,border-color .35s; }
 .frame::after { content:"VIEW ↗"; position:absolute; right:12px; bottom:-25px; opacity:0; font:.5rem var(--mono); letter-spacing:.12em; color:var(--gold); transition:opacity .25s; }
 .frame.is-active { border-color:rgba(233,226,214,.72); }
@@ -51,7 +51,7 @@ button { color:inherit; font:inherit; }
 .sample-two { left:40%; top:20%; background:repeating-linear-gradient(45deg,#6f2520 0 4px,#b38158 4px 8px); transform:rotate(7deg); }
 .sample-three { left:20%; top:48%; width:68%; height:34%; background:radial-gradient(circle at 30% 30%,#c2a36d,#31271e); transform:rotate(-2deg); }
 .floor { position:absolute; left:50%; top:82%; width:min(1000px,90vw); height:260px; transform:translateX(-50%) rotateX(74deg); transform-origin:top; border-radius:50%; background:radial-gradient(ellipse,rgba(196,168,109,.12),rgba(0,0,0,.15) 48%,transparent 70%); border:1px solid rgba(196,168,109,.08); pointer-events:none; }
-.gallery-controls { position:absolute; z-index:10; bottom:5%; left:50%; display:flex; align-items:center; gap:1.5rem; transform:translateX(-50%); }
+.gallery-controls { position:absolute; z-index:10; bottom:3%; left:50%; display:flex; align-items:center; gap:1.5rem; transform:translateX(-50%); }
 .gallery-controls button { width:42px; height:42px; border:1px solid var(--line); border-radius:50%; background:rgba(9,8,6,.5); cursor:pointer; transition:border-color .2s,background .2s; }
 .gallery-controls button:hover { border-color:var(--gold); background:rgba(196,168,109,.12); }
 .gallery-controls p { white-space:nowrap; font:.52rem var(--mono); letter-spacing:.13em; color:var(--muted); }
