@@ -7,4 +7,23 @@ const projects=[
 ];
 const params=new URLSearchParams(location.search),requested=params.get("id"),index=Math.max(0,projects.findIndex(project=>project.id===requested)),project=projects[index],next=projects[(index+1)%projects.length];
 document.title=`${project.title} — Xixian Qi`;document.querySelector("#project-number").textContent=`${String(index+1).padStart(2,"0")} / ${String(projects.length).padStart(2,"0")}`;document.querySelector("#project-title").textContent=project.title;document.querySelector("#project-type").textContent=project.type;document.querySelector("#project-lead").textContent=project.lead;document.querySelector("#project-role").textContent=project.role;document.querySelector("#project-tools").textContent=project.tools;document.querySelector("#project-story").textContent=project.story;document.querySelector("#project-art").innerHTML=project.art;document.querySelector("#next-project").href=`project.html?id=${next.id}`;document.querySelector("#next-title").textContent=`${next.title} →`;
-if(project.id==="yunjin")document.querySelector(".media-grid").innerHTML=`<div class="media-slot"><video controls autoplay muted loop playsinline poster="assets/yunjin-hero.webp"><source src="assets/yunjin-film.mp4" type="video/mp4"></video></div><div class="media-slot"><img src="assets/yunjin-hero.webp" alt="Digital Yunjin virtual runway scene"></div><div class="media-slot">PROCESS IMAGE 02</div>`;
+if(project.id==="yunjin")document.querySelector(".media-grid").innerHTML=`
+  <div class="media-slot">
+    <video controls autoplay muted loop playsinline poster="assets/yunjin-hero.webp">
+      <source src="assets/yunjin-film.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="media-slot">
+    <img src="assets/yunjin-hero.webp" alt="Digital Yunjin virtual runway scene">
+  </div>
+
+  <div class="media-slot youtube-slot">
+    <iframe
+      src="https://www.youtube.com/embed/YjLEyzU4QaU"
+      title="A Fleeting Illusion — Digital Yunjin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+`;
