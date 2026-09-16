@@ -83,6 +83,19 @@ button { color:inherit; font:inherit; }
 .media-slot:first-child { grid-column:1/-1; min-height:72vh; }
 .media-slot img,.media-slot video { display:block; width:100%; height:100%; object-fit:cover; }
 .media-slot video { background:#000; }
+.youtube-slot {
+  grid-column: 1 / -1;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.youtube-slot iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .next-project { display:flex; justify-content:space-between; align-items:end; padding:5rem clamp(1.2rem,8vw,10rem); background:var(--red); color:var(--paper); }
 .next-project span { font:.58rem var(--mono); letter-spacing:.13em; }
 .next-project strong { font:300 clamp(2.5rem,5vw,5rem) var(--serif); }
