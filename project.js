@@ -9,7 +9,7 @@ const params=new URLSearchParams(location.search),requested=params.get("id"),ind
 document.title=`${project.title} — Xixian Qi`;
 if(project.website){
   renderWebsiteProject();
-}else if(project.id==="materials"){
+}else if(project.id==="materials"&&typeof renderMaterialsProject==="function"){
   renderMaterialsProject();
 }else{
 document.querySelector("#project-number").textContent=`${String(index+1).padStart(2,"0")} / ${String(projects.length).padStart(2,"0")}`;document.querySelector("#project-title").textContent=project.title;document.querySelector("#project-type").textContent=project.type;document.querySelector("#project-lead").textContent=project.lead;document.querySelector("#project-role").textContent=project.role;document.querySelector("#project-tools").textContent=project.tools;document.querySelector("#project-story").textContent=project.story;document.querySelector("#project-art").innerHTML=project.art;document.querySelector("#next-project").href=`project.html?id=${next.id}`;document.querySelector("#next-title").textContent=`${next.title} →`;
