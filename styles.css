@@ -207,6 +207,110 @@ button { color:inherit; font:inherit; }
 .materials-related-link strong { display:block; margin:.8rem 0; }
 .materials-related-link p { max-width:460px; margin:0; color:#e0cfc1; font-size:.88rem; line-height:1.7; }
 .materials-related-link img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border:1px solid rgba(233,226,214,.3); }
+.yunjin-project-page { --yunjin-gutter:clamp(1.2rem,7vw,8rem); background:#100e12; color:#eee6dd; }
+.yunjin-project-page .project-nav { position:sticky; top:0; z-index:40; background:rgba(16,14,18,.95); color:#eee6dd; border-color:rgba(238,230,221,.18); }
+.yunjin-project-page .project-nav span { color:#bfb2bb; }
+.yunjin-project-page .project-nav a:first-child { display:inline-flex; align-items:center; min-height:44px; border-color:#b9a077; }
+.yunjin-project-page a:focus-visible { outline:2px solid #e1c58e; outline-offset:4px; }
+.yunjin-opening { position:relative; height:220vh; height:220svh; min-height:1200px; }
+.yunjin-dream-stage { --dream-scale:1.12; --mist-opacity:.5; --fragment-opacity:.24; --thread-offset:1800px; --thread-opacity:.14; position:sticky; top:72px; height:calc(100vh - 72px); height:calc(100svh - 72px); min-height:480px; overflow:hidden; background:#19131c; }
+.yunjin-dream-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:56% 50%; transform:scale(var(--dream-scale)); transform-origin:56% 50%; }
+.yunjin-dream-fragment { position:absolute; z-index:1; background-image:url('assets/yunjin-hero.webp'); background-size:cover; opacity:var(--fragment-opacity); border:1px solid rgba(242,229,237,.5); pointer-events:none; }
+.yunjin-dream-fragment.fragment-one { left:8%; top:14%; width:18%; height:28%; background-position:15% 25%; transform:rotate(-8deg); }
+.yunjin-dream-fragment.fragment-two { right:8%; top:24%; width:16%; height:24%; background-position:85% 30%; transform:rotate(7deg); }
+.yunjin-dream-mist { position:absolute; inset:-10%; z-index:2; opacity:var(--mist-opacity); background:radial-gradient(ellipse at 15% 25%,rgba(255,247,254,.95),transparent 58%),radial-gradient(ellipse at 80% 65%,rgba(227,246,244,.92),transparent 62%),linear-gradient(140deg,rgba(247,230,245,.55),rgba(234,249,247,.7)); pointer-events:none; }
+.yunjin-dream-threads { position:absolute; inset:0; z-index:3; width:100%; height:100%; opacity:var(--thread-opacity); pointer-events:none; }
+.yunjin-dream-threads path { fill:none; stroke:#ecd2a0; stroke-width:1.2; stroke-dasharray:1800; stroke-dashoffset:var(--thread-offset); }
+.yunjin-dream-shade { position:absolute; inset:0; z-index:4; background:linear-gradient(180deg,rgba(16,14,18,.28),transparent 25%,rgba(16,14,18,.12) 45%,rgba(16,14,18,.86)); pointer-events:none; }
+.yunjin-opening-note { position:absolute; z-index:5; top:1.5rem; left:var(--yunjin-gutter); right:var(--yunjin-gutter); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font:.57rem/1.6 var(--mono); letter-spacing:.12em; }
+.yunjin-opening-copy { position:absolute; z-index:5; left:var(--yunjin-gutter); right:var(--yunjin-gutter); bottom:clamp(4rem,7vh,6rem); max-width:850px; }
+.yunjin-eyebrow { margin:0 0 1.25rem; font:.6rem/1.6 var(--mono); letter-spacing:.14em; color:#c8b28d; }
+.yunjin-opening-copy h1 { margin:0; font:300 clamp(4rem,8.5vw,9rem)/.85 var(--serif); letter-spacing:-.045em; text-shadow:0 2px 25px rgba(16,14,18,.3); }
+.yunjin-opening-copy h1 em { font-weight:300; }
+.yunjin-chinese-title { margin:1.5rem 0 1rem; font-family:serif; font-size:.8rem; line-height:1.8; letter-spacing:.12em; color:#e2d1df; }
+.yunjin-opening-lead { margin:0; font:300 clamp(1.2rem,2vw,1.8rem)/1.35 var(--serif); color:#e5d9df; }
+.yunjin-opening-links { display:flex; flex-wrap:wrap; gap:.5rem 1.75rem; margin-top:1.25rem; }
+.yunjin-opening-links a { min-height:44px; display:inline-flex; align-items:center; gap:1rem; border-bottom:1px solid rgba(238,230,221,.55); font:.65rem var(--mono); }
+.yunjin-dream-caption { position:absolute; z-index:5; bottom:1.25rem; right:var(--yunjin-gutter); margin:0; font:.58rem var(--mono); letter-spacing:.1em; text-transform:uppercase; color:#e2d2df; text-shadow:0 2px 12px #100e12; }
+.yunjin-chapters { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(238,230,221,.18); border-bottom:1px solid rgba(238,230,221,.18); background:#161217; }
+.yunjin-chapters a { display:flex; align-items:center; justify-content:center; gap:.75rem; min-height:72px; padding:1rem .6rem; font:.66rem var(--mono); }
+.yunjin-chapters a+a { border-left:1px solid rgba(238,230,221,.18); }
+.yunjin-chapters span { color:#c8b28d; font-size:.58rem; }
+.yunjin-chapters a:hover { background:#251d27; }
+.yunjin-section { padding:clamp(4rem,8vw,8rem) var(--yunjin-gutter); scroll-margin-top:90px; }
+.yunjin-overview { display:grid; grid-template-columns:1fr 1.1fr; gap:3rem 8%; background:#100e12; }
+.yunjin-overview h2,.yunjin-section-heading h2,.yunjin-garment h2 { margin:0; font:300 clamp(3rem,5.5vw,5.5rem)/.95 var(--serif); letter-spacing:-.035em; }
+.yunjin-overview h2 em { color:#c6b1c8; font-weight:300; }
+.yunjin-project-context { margin:2rem 0 0; font:.65rem/1.8 var(--mono); color:#a89ba8; }
+.yunjin-prose p { margin:0 0 1.5rem; font-size:.94rem; line-height:1.9; color:#bfb2bb; }
+.yunjin-prose .yunjin-statement { color:#eee6dd; font:300 clamp(1.5rem,2.2vw,2rem)/1.4 var(--serif); }
+.yunjin-section-heading { display:grid; grid-template-columns:1.1fr 1fr; gap:2rem 8%; align-items:end; }
+.yunjin-section-heading>p { margin:0; color:#bfb2bb; font-size:.94rem; line-height:1.85; }
+.yunjin-section-heading h2 em { font-weight:300; color:#c6b1c8; }
+.yunjin-material { background:#e7e0d4; color:#211c22; }
+.yunjin-material .yunjin-eyebrow { color:#7b6550; }
+.yunjin-material .yunjin-section-heading>p { color:#5c525b; }
+.yunjin-material .yunjin-section-heading h2 em { color:#805f7b; }
+.yunjin-process { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3.5rem; }
+.yunjin-process article { padding-top:1.5rem; border-top:1px solid rgba(33,28,34,.3); }
+.yunjin-process article>span { color:#7b6550; font:.6rem var(--mono); }
+.yunjin-process h3 { margin:1.25rem 0 1rem; font:300 2rem/1.1 var(--serif); }
+.yunjin-process article>p:not(.yunjin-tool-label) { margin:0; color:#5c525b; font-size:.88rem; line-height:1.85; }
+.yunjin-tool-label { margin:1.5rem 0 0; font:.58rem/1.7 var(--mono); letter-spacing:.08em; color:#7b6550; }
+.yunjin-material-note { margin:3rem 0 0; padding-top:1.5rem; border-top:1px solid rgba(33,28,34,.18); color:#5c525b; font-size:.8rem; line-height:1.8; }
+.yunjin-material-note a { border-bottom:1px solid #805f7b; color:#60405d; }
+.yunjin-garment { display:grid; grid-template-columns:.95fr 1.05fr; background:#d9d0d5; color:#211c22; scroll-margin-top:90px; }
+.yunjin-garment figure { margin:0; padding:clamp(1.5rem,4vw,4rem); background:#211c24; }
+.yunjin-garment img { display:block; width:100%; height:auto; }
+.yunjin-garment figcaption { margin-top:1rem; color:#bfb2bb; font:.57rem/1.6 var(--mono); letter-spacing:.1em; }
+.yunjin-garment-copy { padding:clamp(3rem,6vw,6rem); display:flex; flex-direction:column; justify-content:center; }
+.yunjin-garment-copy .yunjin-eyebrow { color:#7b6550; }
+.yunjin-garment h2 em { color:#805f7b; font-weight:300; }
+.yunjin-garment-copy>p:not(.yunjin-eyebrow) { margin:2rem 0 0; font-size:.94rem; line-height:1.9; color:#5c525b; }
+.yunjin-credits { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(33,28,34,.25); }
+.yunjin-credits h3 { margin:0 0 .75rem; font:.58rem var(--mono); text-transform:uppercase; letter-spacing:.1em; color:#7b6550; }
+.yunjin-credits p { margin:0; font-size:.8rem; line-height:1.75; color:#5c525b; }
+.yunjin-film { background:#100e12; }
+.yunjin-video { margin:3.5rem 0 0; }
+.yunjin-video video { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; background:#000; }
+.yunjin-video figcaption { margin-top:1rem; color:#a89ba8; font:.58rem var(--mono); letter-spacing:.1em; }
+.yunjin-youtube-heading { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin:3rem 0 1.25rem; }
+.yunjin-youtube-heading h3 { margin:0; font:300 1.8rem var(--serif); }
+.yunjin-youtube-heading a { min-height:44px; display:inline-flex; align-items:center; gap:.75rem; font:.65rem var(--mono); border-bottom:1px solid #c8b28d; }
+.yunjin-youtube { aspect-ratio:16/9; background:#000; }
+.yunjin-youtube iframe { display:block; width:100%; height:100%; border:0; }
+.yunjin-reflection { display:grid; grid-template-columns:.3fr 1fr; gap:1.5rem 2rem; padding:2rem 0 0; margin-top:3.5rem; border-top:1px solid rgba(238,230,221,.2); }
+.yunjin-reflection>p:last-child { margin:0; color:#d4c6d2; font:300 clamp(1.3rem,2vw,1.8rem)/1.5 var(--serif); }
+.yunjin-project-page .next-project { padding:clamp(3rem,6vw,5rem) var(--yunjin-gutter); background:#653746; }
+@media (max-width:900px) {
+  .yunjin-overview,.yunjin-section-heading,.yunjin-garment { grid-template-columns:1fr; }
+  .yunjin-process { grid-template-columns:1fr; }
+  .yunjin-garment-copy { padding:3rem var(--yunjin-gutter); }
+  .yunjin-garment figure { display:flex; flex-direction:column; align-items:center; }
+  .yunjin-garment img { max-width:520px; }
+}
+@media (max-width:600px) {
+  .yunjin-opening-note>span:last-child { display:none; }
+  .yunjin-opening-copy h1 { font-size:clamp(3.7rem,13vw,6.5rem); }
+  .yunjin-opening-copy { bottom:4.5rem; }
+  .yunjin-dream-fragment { display:none; }
+  .yunjin-chapters { grid-template-columns:repeat(2,1fr); }
+  .yunjin-chapters a { min-height:58px; font-size:.64rem; }
+  .yunjin-chapters a:nth-child(odd) { border-left:0; }
+  .yunjin-chapters a:nth-child(n+3) { border-top:1px solid rgba(238,230,221,.18); }
+  .yunjin-credits,.yunjin-reflection { grid-template-columns:1fr; }
+}
+@media (max-height:600px) {
+  .yunjin-opening { height:auto; min-height:0; }
+  .yunjin-dream-stage { position:relative; top:auto; height:620px; min-height:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .yunjin-opening { height:auto; min-height:0; }
+  .yunjin-dream-stage { position:relative; top:auto; }
+  .yunjin-dream-image { transform:none; }
+  .yunjin-dream-mist { opacity:0; }
+  .yunjin-dream-threads,.yunjin-dream-fragment,.yunjin-dream-caption { display:none; }
+}
 @media (max-width:900px) {
   .materials-hero { grid-template-columns:1fr; }
   .materials-hero-art { min-height:0; padding:2rem; }

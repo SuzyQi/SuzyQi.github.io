@@ -9,6 +9,8 @@ const params=new URLSearchParams(location.search),requested=params.get("id"),ind
 document.title=`${project.title} — Xixian Qi`;
 if(project.website){
   renderWebsiteProject();
+}else if(project.id==="yunjin"&&params.get("view")!=="original"&&typeof renderYunjinProject==="function"){
+  renderYunjinProject();
 }else if(project.id==="materials"&&typeof renderMaterialsProject==="function"){
   renderMaterialsProject();
 }else{
