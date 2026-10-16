@@ -1,0 +1,126 @@
+.yunjin-editorial-page { --yunjin-gutter:max(clamp(1.2rem,6vw,7rem),calc((100vw - 1320px)/2)); }
+.yunjin-editorial-page .yunjin-opening { height:112vh; height:112svh; min-height:680px; }
+.yunjin-editorial-page .yunjin-dream-stage { --dream-scale:1.035; --mist-opacity:.16; --fragment-opacity:0; --thread-opacity:.08; min-height:540px; }
+.yunjin-editorial-page .yunjin-opening-note { font-size:.65rem; letter-spacing:.08em; }
+.yunjin-editorial-page .yunjin-opening-copy { bottom:clamp(3.5rem,7vh,5.5rem); max-width:760px; }
+.yunjin-editorial-page .yunjin-opening-copy h1 { font-size:clamp(4rem,7.5vw,8rem); line-height:.9; }
+.yunjin-editorial-page .yunjin-chinese-title { margin:1rem 0; font-size:.88rem; }
+.yunjin-editorial-page .yunjin-opening-lead { max-width:28rem; font:300 clamp(1rem,1.3vw,1.15rem)/1.65 var(--sans); }
+.yunjin-editorial-page .yunjin-opening-links { align-items:center; gap:.8rem 1.75rem; margin-top:1.6rem; }
+.yunjin-editorial-page .yunjin-opening-links a { font-size:.73rem; }
+.yunjin-editorial-page .yunjin-opening-links .yunjin-watch { padding:.9rem 1.15rem; gap:.8rem; background:#eee6dd; color:#211c22; border:1px solid #eee6dd; }
+.yunjin-editorial-page .yunjin-watch:hover { background:#e1d2dc; border-color:#e1d2dc; }
+.yunjin-editorial-page .yunjin-watch-time { padding-left:.8rem; border-left:1px solid #b4a4ac; font-size:.65rem; }
+.yunjin-editorial-page .yunjin-dream-caption { font-size:.63rem; }
+.yunjin-editorial-page .yunjin-chapters a { min-height:66px; font-size:.74rem; }
+.yunjin-editorial-page .yunjin-chapters span { font-size:.65rem; }
+.yunjin-editorial-page .yunjin-section { padding:clamp(3.5rem,6vw,6rem) var(--yunjin-gutter); }
+.yunjin-editorial-page .yunjin-overview { grid-template-columns:.9fr 1.1fr; gap:2.5rem 7%; padding-bottom:clamp(2.5rem,4vw,4rem); }
+.yunjin-editorial-page .yunjin-overview h2,
+.yunjin-editorial-page .yunjin-section-heading h2,
+.yunjin-editorial-page .yunjin-making-heading h2 { margin:0; font:300 clamp(2.6rem,4.5vw,4.5rem)/1.02 var(--serif); letter-spacing:-.035em; }
+.yunjin-editorial-page .yunjin-project-context { margin-top:1.5rem; font-size:.78rem; line-height:1.8; }
+.yunjin-editorial-page .yunjin-prose .yunjin-statement { font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.45; }
+.yunjin-editorial-page .yunjin-prose>p { font-size:.94rem; line-height:1.8; }
+.yunjin-editorial-page .yunjin-project-facts { display:grid; grid-template-columns:1.25fr 1fr; gap:1.5rem; padding-top:1.4rem; margin:1.8rem 0 0; border-top:1px solid rgba(238,230,221,.2); }
+.yunjin-editorial-page .yunjin-project-facts dt { margin-bottom:.6rem; font:.65rem/1.6 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:#c8b28d; }
+.yunjin-editorial-page .yunjin-project-facts dd { margin:0; color:#d2c6cf; font-size:.85rem; line-height:1.8; }
+.yunjin-editorial-page .yunjin-section-heading { gap:1.5rem 7%; }
+.yunjin-editorial-page .yunjin-section-heading>p { font-size:.9rem; }
+.yunjin-editorial-page .yunjin-video { margin-top:2.25rem; }
+.yunjin-editorial-page .yunjin-video video { border:1px solid rgba(238,230,221,.18); }
+.yunjin-editorial-page .yunjin-video figcaption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem 1.5rem; font-size:.63rem; line-height:1.7; }
+.yunjin-editorial-page .yunjin-film-links { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem 2rem; margin-top:1.25rem; }
+.yunjin-editorial-page .yunjin-film-links a { display:inline-flex; align-items:center; gap:.75rem; min-height:44px; border-bottom:1px solid rgba(238,230,221,.35); font:.74rem/1.6 var(--mono); }
+.yunjin-editorial-page .yunjin-frames,
+.yunjin-editorial-page .yunjin-making { color:#211c22; background:#e7e0d4; }
+.yunjin-editorial-page .yunjin-frames .yunjin-eyebrow,
+.yunjin-editorial-page .yunjin-making .yunjin-eyebrow { color:#7b6550; }
+.yunjin-editorial-page .yunjin-frames .yunjin-section-heading>p { color:#5c525b; }
+.yunjin-editorial-page .yunjin-frames .yunjin-section-heading h2 em,
+.yunjin-editorial-page .yunjin-making-heading h2 em { color:#805f7b; font-weight:300; }
+.yunjin-editorial-page .yunjin-stills-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:2.5rem 1.5rem; margin-top:3rem; align-items:end; }
+.yunjin-editorial-page .yunjin-still { margin:0; grid-column:span 3; min-width:0; }
+.yunjin-editorial-page .yunjin-still:first-child { grid-column:span 7; }
+.yunjin-editorial-page .yunjin-still:nth-child(2) { grid-column:span 5; }
+.yunjin-editorial-page .yunjin-still-open { display:block; position:relative; background:#211c24; border:1px solid rgba(33,28,34,.15); }
+.yunjin-editorial-page .yunjin-still img { display:block; width:100%; height:auto; aspect-ratio:5/3; object-fit:contain; }
+.yunjin-editorial-page .yunjin-still-zoom { position:absolute; right:.65rem; bottom:.65rem; display:grid; place-items:center; width:32px; height:32px; background:rgba(16,14,18,.76); color:#eee6dd; font-size:1.25rem; transition:background .15s; }
+.yunjin-editorial-page .yunjin-still-open:hover .yunjin-still-zoom { background:#68445f; }
+.yunjin-editorial-page .yunjin-still figcaption { margin-top:.85rem; }
+.yunjin-editorial-page .yunjin-still figcaption>span { color:#76656c; font:.63rem/1.6 var(--mono); letter-spacing:.04em; }
+.yunjin-editorial-page .yunjin-still figcaption p { margin:.35rem 0 0; color:#443844; font-size:.86rem; line-height:1.5; }
+.yunjin-editorial-page .yunjin-still:nth-child(-n+2) figcaption p { font-size:.98rem; }
+.yunjin-editorial-page .yunjin-frames a:focus-visible,
+.yunjin-editorial-page .yunjin-making a:focus-visible { outline-color:#68445f; }
+.yunjin-editorial-page .yunjin-making { border-top:1px solid rgba(33,28,34,.18); }
+.yunjin-editorial-page .yunjin-making-heading { margin-bottom:3rem; }
+.yunjin-editorial-page .yunjin-making-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(2rem,7vw,6rem); align-items:start; }
+.yunjin-editorial-page .yunjin-making-still { margin:0; padding:1.5rem; max-width:410px; background:#211c24; scroll-margin-top:90px; }
+.yunjin-editorial-page .yunjin-making-still img { display:block; width:100%; height:auto; }
+.yunjin-editorial-page .yunjin-making-still figcaption { margin-top:1rem; color:#bfb2bb; font:.64rem/1.6 var(--mono); letter-spacing:.06em; }
+.yunjin-editorial-page .yunjin-making-steps { list-style:none; padding:0; margin:0; }
+.yunjin-editorial-page .yunjin-making-steps li { display:grid; grid-template-columns:2.5rem minmax(0,1fr); padding:1.5rem 0; border-top:1px solid rgba(33,28,34,.2); gap:.5rem; }
+.yunjin-editorial-page .yunjin-making-steps li:first-child { padding-top:0; border-top:0; }
+.yunjin-editorial-page .yunjin-making-steps li>span { padding-top:.4rem; color:#7b6550; font:.65rem var(--mono); }
+.yunjin-editorial-page .yunjin-making-steps h3 { margin:0 0 .75rem; font:300 1.75rem/1.1 var(--serif); }
+.yunjin-editorial-page .yunjin-making-steps p:not(.yunjin-tool-label) { margin:0; color:#5c525b; font-size:.9rem; line-height:1.8; }
+.yunjin-editorial-page .yunjin-making .yunjin-tool-label { margin-top:1rem; font-size:.64rem; }
+.yunjin-editorial-page .yunjin-making .yunjin-material-note { margin-top:1.5rem; font-size:.84rem; }
+.yunjin-editorial-page .yunjin-closing { display:grid; grid-template-columns:.3fr 1fr; gap:1.5rem 2rem; }
+.yunjin-editorial-page .yunjin-closing h2 { margin:.4rem 0 0; font-size:.68rem; font-weight:400; }
+.yunjin-editorial-page .yunjin-closing>p { margin:0; color:#d4c6d2; font:300 clamp(1.5rem,2.2vw,2rem)/1.5 var(--serif); }
+.yunjin-editorial-page .yunjin-closing>a { grid-column:2; justify-self:start; display:inline-flex; align-items:center; gap:1rem; min-height:44px; border-bottom:1px solid rgba(238,230,221,.4); font:.74rem var(--mono); }
+.yunjin-editorial-page.yunjin-gallery-open { overflow:hidden; }
+.yunjin-editorial-page .yunjin-lightbox { width:min(94vw,1320px); max-width:none; max-height:calc(100vh - 2rem); max-height:calc(100svh - 2rem); padding:clamp(.8rem,2vw,1.5rem); border:1px solid #6b5867; background:#151117; color:#eee6dd; }
+.yunjin-editorial-page .yunjin-lightbox::backdrop { background:rgba(9,7,11,.92); }
+.yunjin-editorial-page .yunjin-lightbox-toolbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-bottom:1rem; }
+.yunjin-editorial-page #yunjin-lightbox-count { color:#c8b28d; font:.75rem var(--mono); }
+.yunjin-editorial-page .yunjin-lightbox button { min-width:44px; min-height:44px; padding:.5rem .8rem; border:1px solid #796775; background:transparent; color:#eee6dd; cursor:pointer; font:.8rem var(--mono); }
+.yunjin-editorial-page .yunjin-lightbox button:hover { background:#352837; }
+.yunjin-editorial-page .yunjin-lightbox button:focus-visible { outline:2px solid #e1c58e; outline-offset:3px; }
+.yunjin-editorial-page #yunjin-lightbox-image { display:block; width:100%; height:auto; max-height:65vh; max-height:min(70svh,calc(100svh - 12rem)); object-fit:contain; background:#09070b; }
+.yunjin-editorial-page .yunjin-lightbox-bottom { display:flex; justify-content:space-between; align-items:center; gap:1rem 2rem; padding-top:1rem; }
+.yunjin-editorial-page #yunjin-lightbox-caption { margin:0; font:300 clamp(.9rem,1.4vw,1.2rem)/1.5 var(--sans); }
+.yunjin-editorial-page .yunjin-lightbox-navigation { display:flex; gap:.5rem; flex-shrink:0; }
+@media (max-width:900px) {
+  .yunjin-editorial-page .yunjin-overview,
+  .yunjin-editorial-page .yunjin-section-heading { grid-template-columns:1fr; gap:2rem; }
+  .yunjin-editorial-page .yunjin-overview h2 { max-width:650px; }
+  .yunjin-editorial-page .yunjin-still,
+  .yunjin-editorial-page .yunjin-still:first-child,
+  .yunjin-editorial-page .yunjin-still:nth-child(2) { grid-column:span 6; }
+  .yunjin-editorial-page .yunjin-making-grid { grid-template-columns:.8fr 1.2fr; gap:2rem; }
+}
+@media (max-width:600px) {
+  .yunjin-editorial-page .yunjin-opening { height:108vh; height:108svh; min-height:620px; }
+  .yunjin-editorial-page .yunjin-opening-copy { bottom:3.5rem; }
+  .yunjin-editorial-page .yunjin-opening-copy h1 { font-size:clamp(3.5rem,12vw,4.5rem); }
+  .yunjin-editorial-page .yunjin-opening-lead { font-size:.94rem; }
+  .yunjin-editorial-page .yunjin-opening-links { gap:.6rem 1.25rem; }
+  .yunjin-editorial-page .yunjin-opening-links a { font-size:.69rem; }
+  .yunjin-editorial-page .yunjin-chapters a { min-height:56px; font-size:.72rem; }
+  .yunjin-editorial-page .yunjin-project-facts { grid-template-columns:1fr; gap:1.25rem; }
+  .yunjin-editorial-page .yunjin-stills-grid { gap:1.75rem 1rem; margin-top:2rem; }
+  .yunjin-editorial-page .yunjin-still:first-child,
+  .yunjin-editorial-page .yunjin-still:nth-child(2) { grid-column:span 12; }
+  .yunjin-editorial-page .yunjin-making-grid { grid-template-columns:1fr; }
+  .yunjin-editorial-page .yunjin-making-still { max-width:340px; justify-self:center; padding:1.2rem; }
+  .yunjin-editorial-page .yunjin-making-steps li { grid-template-columns:2rem minmax(0,1fr); }
+  .yunjin-editorial-page .yunjin-closing { grid-template-columns:1fr; gap:1.25rem; }
+  .yunjin-editorial-page .yunjin-closing>a { grid-column:auto; }
+  .yunjin-editorial-page .yunjin-lightbox-bottom { gap:1rem; align-items:flex-start; }
+}
+@media (max-height:600px) {
+  .yunjin-editorial-page .yunjin-opening { height:auto; min-height:0; }
+  .yunjin-editorial-page .yunjin-dream-stage { position:relative; top:0; height:620px; min-height:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .yunjin-editorial-page .yunjin-opening { height:auto; min-height:0; }
+  .yunjin-editorial-page .yunjin-dream-stage { position:relative; top:0; }
+  .yunjin-editorial-page .yunjin-dream-image { transform:none; }
+  .yunjin-editorial-page .yunjin-dream-mist { opacity:0; }
+  .yunjin-editorial-page .yunjin-dream-threads,
+  .yunjin-editorial-page .yunjin-dream-caption { display:none; }
+  .yunjin-editorial-page .yunjin-still-zoom { transition:none; }
+}
