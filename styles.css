@@ -272,7 +272,7 @@ button { color:inherit; font:inherit; }
 .yunjin-credits p { margin:0; font-size:.8rem; line-height:1.75; color:#5c525b; }
 .yunjin-film { background:#100e12; }
 .yunjin-video { margin:3.5rem 0 0; }
-.yunjin-video video { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; background:#000; }
+.yunjin-video video { display:block; width:100%; height:auto; aspect-ratio:5/3; object-fit:contain; background:#000; }
 .yunjin-video figcaption { margin-top:1rem; color:#a89ba8; font:.58rem var(--mono); letter-spacing:.1em; }
 .yunjin-youtube-heading { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin:3rem 0 1.25rem; }
 .yunjin-youtube-heading h3 { margin:0; font:300 1.8rem var(--serif); }

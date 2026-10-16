@@ -16,7 +16,7 @@ function renderYunjinProject(){
           <h1 id="yunjin-title">A Fleeting<br><em>Illusion</em></h1>
           <p class="yunjin-chinese-title" lang="zh-CN">云锦浮梦 · 一场转瞬即逝的幻象</p>
           <p class="yunjin-opening-lead">A textile, a garment,<br>a landscape of memory.</p>
-          <div class="yunjin-opening-links"><a href="#yunjin-overview">Explore the project <span aria-hidden="true">↓</span></a><a href="#yunjin-film">Watch the film <span aria-hidden="true">↗</span></a></div>
+          <div class="yunjin-opening-links"><a href="#yunjin-overview">Explore the project <span aria-hidden="true">↓</span></a><a href="#yunjin-film">Watch the final film <span aria-hidden="true">↗</span></a></div>
         </div>
         <p class="yunjin-dream-caption" id="yunjin-dream-caption">A garden in fragments</p>
       </div>
@@ -47,8 +47,8 @@ function renderYunjinProject(){
     </section>
 
     <section class="yunjin-film yunjin-section" id="yunjin-film" aria-labelledby="yunjin-film-title">
-      <div class="yunjin-section-heading"><div><p class="yunjin-eyebrow">04 / THE MOVING IMAGE</p><h2 id="yunjin-film-title">Enter the<br><em>dream.</em></h2></div><p>Explore the project through its moving-image work, where virtual dress and a reimagined landscape share the same frame.</p></div>
-      <figure class="yunjin-video"><video controls playsinline preload="metadata" poster="assets/yunjin-hero.webp"><source src="assets/yunjin-film.mp4" type="video/mp4">Your browser does not support this video. <a href="assets/yunjin-film.mp4">Open the project video</a>.</video><figcaption>PROJECT VIDEO</figcaption></figure>
+      <div class="yunjin-section-heading"><div><p class="yunjin-eyebrow">04 / THE FINAL FILM</p><h2 id="yunjin-film-title">Enter the<br><em>dream.</em></h2></div><p>The final project film brings digital textile, virtual dress and a reimagined landscape together in a moving-image narrative.</p></div>
+      <figure class="yunjin-video"><video id="yunjin-final-video" controls playsinline preload="metadata" width="1280" height="768" poster="assets/yunjin-hero.webp" data-hls-src="assets/yunjin-final/index.m3u8" aria-label="A Fleeting Illusion — final project film"><source src="assets/yunjin-final-film.mp4" type="video/mp4">Your browser does not support this video. <a href="assets/yunjin-final-film.mp4">Open the final project film</a>.</video><figcaption>A FLEETING ILLUSION · FINAL PROJECT FILM · 2:01</figcaption></figure>
       <div class="yunjin-youtube-heading"><h3>Watch on YouTube</h3><a href="https://www.youtube.com/watch?v=YjLEyzU4QaU" target="_blank" rel="noopener noreferrer">Open film <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></div>
       <div class="yunjin-youtube"><iframe src="https://www.youtube.com/embed/YjLEyzU4QaU" title="A Fleeting Illusion — Digital Yunjin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       <div class="yunjin-reflection"><p class="yunjin-eyebrow">REFLECTION</p><p>The project approaches digitisation as a creative translation: carrying selected material and cultural characteristics into a virtual setting, while opening space for a new interpretation.</p></div>
@@ -57,6 +57,59 @@ function renderYunjinProject(){
     <a class="next-project" href="project.html?id=${next.id}"><span>NEXT PROJECT</span><strong>${next.title} →</strong></a>
   `;
   bindYunjinDream();
+  bindYunjinFilm();
+}
+
+function bindYunjinFilm(){
+  const video=document.querySelector("#yunjin-final-video");
+  if(!video)return;
+  const stream=video.getAttribute("data-hls-src");
+  const fallback=video.querySelector("source").getAttribute("src");
+  const playFallback=(resume=!video.paused,time=video.currentTime||0)=>{
+    if(time)video.addEventListener("loadedmetadata",()=>{video.currentTime=Math.min(time,video.duration||time);},{once:true});
+    video.src=fallback;
+    video.load();
+    if(resume){const playing=video.play();if(playing&&playing.catch)playing.catch(()=>{});}
+  };
+  if(video.canPlayType("application/vnd.apple.mpegurl")){
+    video.addEventListener("error",()=>playFallback(),{once:true});
+    video.src=stream;
+    return;
+  }
+  const loadPlayer=()=>{
+    const upgrade=()=>{
+      if(!window.Hls||!window.Hls.isSupported()||!video.paused||video.currentTime>0)return;
+      const hls=new window.Hls({autoStartLoad:false,maxBufferLength:20,maxMaxBufferLength:40,backBufferLength:20});
+      let restored=false;
+      const start=()=>hls.startLoad();
+      hls.on(window.Hls.Events.ERROR,(_,data)=>{
+        if(!data.fatal||restored)return;
+        restored=true;
+        const resume=!video.paused;
+        const time=video.currentTime||0;
+        video.removeEventListener("play",start);
+        hls.destroy();
+        playFallback(resume,time);
+      });
+      video.addEventListener("play",start,{once:true});
+      hls.loadSource(stream);
+      hls.attachMedia(video);
+      window.addEventListener("pagehide",event=>{if(!event.persisted)hls.destroy();},{once:true});
+    };
+    if(window.Hls){upgrade();return;}
+    const script=document.createElement("script");
+    script.src="https://cdn.jsdelivr.net/npm/hls.js@1.7.3/dist/hls.light.min.js";
+    script.async=true;
+    script.crossOrigin="anonymous";
+    script.onload=upgrade;
+    document.head.appendChild(script);
+  };
+  if(window.IntersectionObserver){
+    const observer=new window.IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();loadPlayer();}
+    },{rootMargin:"600px"});
+    observer.observe(video);
+  }else loadPlayer();
 }
 
 function yunjinDreamState(progress){
